@@ -1,3 +1,9 @@
 #spot-name {
     font-weight: bold;
+    font-size: 20px;
 }
+
+#spot-container{
+    display:flex;
+    flex-wrap:wrap;
+  }

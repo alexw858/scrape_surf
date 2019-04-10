@@ -21,4 +21,5 @@ def home():
     return render_template("index.html", reports=reports)
 
 if __name__ == "__main__":
+    # app.config.update(DEBUG=True, TEMPLATES_AUTO_RELOAD=True)
     app.run(debug=True)
