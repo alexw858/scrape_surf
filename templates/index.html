@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Surf Report</title>
+    <!-- try updating bootstrap to v4 and see if that fixes spacing issues -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- <link rel="stylesheet" type="text/css" href="static/styles/style.css"> -->
     <!-- allow style sheet to update on page each time page refreshes -->
@@ -13,35 +14,32 @@
 </head>
 
 <body>
-
     <div class="container">
         <div class="jumbotron">
             <h1>Costa Rica Surf Report</h1>
-
         </div>
         <h4 class="card-title">Surf Spots</h4>
         <div class="container" id="spot-container">
+        <div class="row">
         {% for report in reports%}
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="card" style="width: 20rem;">
-                        <div class="card-body">
-                            <h6 class="card-subtitle mb-2 text-muted" id="spot-name">{{ report.name }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">Small sets: {{ report.small_sets }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">Big sets: {{ report.big_sets }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">Water temp: {{ report.low_water_temp }} - {{ report.high_water_temp }}°F</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">Air temp: {{ report.air_temp }}°F</h6>
-                            <p> Click
-                                <a href={{report.link}}>here</a> for more info!</p>
-                            <hr>
-                        </div>
+            <div class="col-lg-4">
+                <div class="card" style="width: 20rem;">
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted" id="spot-name">{{ report.name }}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Small sets: {{ report.small_sets }}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Big sets: {{ report.big_sets }}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Water temp: {{ report.low_water_temp }} - {{ report.high_water_temp }}°F</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Air temp: {{ report.air_temp }}°F</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Last updated: {{ report.date }}</h6>
+                        <p> Click
+                            <a href={{report.link}}>here</a> for more info!</p>
+                        <hr>
                     </div>
                 </div>
             </div>
-        </div>
-
         {% endfor %}
-
+        </div>
+        </div>
     </div>
 
 </body>

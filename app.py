@@ -7,6 +7,7 @@ client = pymongo.MongoClient(conn)
 # create instance of Flask app
 app = Flask(__name__)
 
+# connect to surf database, created with scraper.py
 # db= getattr(client, surf_db)
 db=client.surf_db
 collection = db.surf_summary
